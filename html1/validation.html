@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" id="name">
+        <br><br>
+
+        Email:
+        <input type="text" id="email">
+        <br><br>
+
+        Mobile Number:
+        <input type="text" id="mobile">
+        <br><br>
+
+        Password:
+        <input type="password" id="password">
+        <br><br>
+
+        Age:
+        <input type="number" id="age">
+        <br><br>
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let password = document.getElementById("password").value;
+            let age = document.getElementById("age").value;
+            let message = document.getElementById("message");
+
+            if (name == "") {
+                message.innerHTML = "Please enter your name.";
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                message.innerHTML = "Please enter a valid email.";
+                return false;
+            }
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                message.innerHTML =
+                    "Mobile number must contain 10 digits.";
+                return false;
+            }
+
+            if (password.length < 6) {
+                message.innerHTML =
+                    "Password must contain at least 6 characters.";
+                return false;
+            }
+
+            if (age == "" || Number(age) < 18 || Number(age) > 100) {
+                message.innerHTML =
+                    "Age must be between 18 and 100.";
+                return false;
+            }
+
+            message.innerHTML =
+                "Registration successful! All fields are valid.";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

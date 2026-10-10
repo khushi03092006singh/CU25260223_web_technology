@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Calculator</title>
+</head>
+<body>
+
+    <h1>Simple Calculator</h1>
+
+    <label>Enter First Number:</label>
+    <input type="number" id="num1">
+    <br><br>
+
+    <label>Enter Second Number:</label>
+    <input type="number" id="num2">
+    <br><br>
+
+    <button onclick="calculate('+')">Addition (+)</button>
+    <button onclick="calculate('-')">Subtraction (-)</button>
+    <button onclick="calculate('*')">Multiplication (*)</button>
+    <button onclick="calculate('/')">Division (/)</button>
+
+    <h3 id="result">Result: </h3>
+
+    <script>
+        function calculate(operator) {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let result;
+
+            if (isNaN(a) || isNaN(b)) {
+                result = "Please enter both numbers.";
+            }
+            else if (operator == '+') {
+                result = a + b;
+            }
+            else if (operator == '-') {
+                result = a - b;
+            }
+            else if (operator == '*') {
+                result = a * b;
+            }
+            else if (operator == '/') {
+                if (b == 0) {
+                    result = "Cannot divide by zero.";
+                } else {
+                    result = a / b;
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Result: " + result;
+        }
+    </script>
+
+</body>
+</html>

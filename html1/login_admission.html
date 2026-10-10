@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Admission Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        form {
+            background-color: white;
+            width: 350px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid darkblue;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkgreen;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid gray;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ABC College</h1>
+
+    <!-- Login Form -->
+    <form>
+        <h2>Login Form</h2>
+
+        <label>Email:</label>
+        <input type="email" name="email"
+               placeholder="Enter your email" required>
+
+        <label>Password:</label>
+        <input type="password" name="password"
+               placeholder="Enter password" required>
+
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+    </form>
+
+    <!-- Admission Form -->
+    <form>
+        <h2>College Admission Form</h2>
+
+        <label>Student Name:</label>
+        <input type="text" name="studentname"
+               placeholder="Enter your name" required>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" required>
+
+        <label>Email:</label>
+        <input type="email" name="admissionemail"
+               placeholder="Enter your email" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" name="phone"
+               placeholder="Enter phone number">
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+
+        <label>Select Course:</label>
+        <select name="course" required>
+            <option value="">Choose Course</option>
+            <option>BCA</option>
+            <option>BBA</option>
+            <option>B.Sc.</option>
+            <option>B.Com.</option>
+        </select>
+
+        <label>Address:</label>
+        <textarea name="address" rows="4"
+                  placeholder="Enter your address"></textarea>
+
+        <input type="submit" value="Apply for Admission">
+        <input type="reset" value="Clear Form">
+    </form>
+
+</body>
+</html>
