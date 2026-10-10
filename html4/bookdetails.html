@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+        }
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background: #141e30;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+        }
+        .details {
+            background: white;
+            max-width: 600px;
+            margin: 35px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+        button {
+            background: #243b55;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        #message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Book Details</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="bookdetails.html">Book Details</a>
+    <a href="registration_login.html">Login/Register</a>
+    <a href="cart_contact.html">Cart & Contact</a>
+</nav>
+
+<div class="details">
+    <h2>Java: The Complete Reference</h2>
+    <p><b>Author:</b> Herbert Schildt</p>
+    <p><b>Category:</b> Programming</p>
+    <p><b>Price:</b> ₹450</p>
+    <p><b>Publisher:</b> McGraw Hill</p>
+    <p><b>Description:</b> This book explains Java programming concepts,
+       including classes, objects, inheritance, exceptions and threads.</p>
+
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <p id="message"></p>
+</div>
+
+<script>
+    function addToCart() {
+        document.getElementById("message").innerHTML =
+            "Book added to cart successfully!";
+    }
+</script>
+
+</body>
+</html>

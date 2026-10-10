@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        .container {
+            background-color: white;
+            width: 70%;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: navy;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        img {
+            width: 250px;
+            height: 160px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="heading">Welcome to My Webpage</h1>
+
+        <p id="text">This is an interactive webpage.</p>
+
+        <button onclick="changeText()">Change Text</button>
+        <button onclick="changeColor()">Change Background</button>
+
+        <hr>
+
+        <h2>Change Image</h2>
+
+        <img id="photo"
+             src="https://placehold.co/250x160/87CEEB/000000?text=Image+1"
+             alt="Sample Image">
+
+        <br>
+
+        <button onclick="changeImage()">Change Image</button>
+
+        <hr>
+
+        <h2>Date and Time</h2>
+
+        <p id="datetime">Click the button to display date and time.</p>
+
+        <button onclick="showDateTime()">Show Date and Time</button>
+
+        <hr>
+
+        <h2>Form Validation</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <input type="text" id="name"
+                   placeholder="Enter your name">
+            <br>
+
+            <input type="email" id="email"
+                   placeholder="Enter your email">
+            <br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script>
+        function changeText() {
+            document.getElementById("heading").innerHTML =
+                "JavaScript is Working!";
+
+            document.getElementById("text").innerHTML =
+                "The text has been changed successfully.";
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = "lightyellow";
+        }
+
+        let imageCount = 1;
+
+        function changeImage() {
+            let photo = document.getElementById("photo");
+
+            if (imageCount == 1) {
+                photo.src =
+                    "https://placehold.co/250x160/90EE90/000000?text=Image+2";
+                imageCount = 2;
+            } else {
+                photo.src =
+                    "https://placehold.co/250x160/87CEEB/000000?text=Image+1";
+                imageCount = 1;
+            }
+        }
+
+        function showDateTime() {
+            document.getElementById("datetime").innerHTML =
+                new Date().toLocaleString();
+        }
+
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message");
+
+            if (name == "") {
+                message.innerHTML = "Please enter your name.";
+                return false;
+            }
+
+            if (email == "") {
+                message.innerHTML = "Please enter your email.";
+                return false;
+            }
+
+            message.innerHTML = "Form submitted successfully!";
+            return false;
+        }
+    </script>
+
+</body>
+</html>

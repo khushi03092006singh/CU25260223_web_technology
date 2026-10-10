@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Catalogue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+        }
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background: #141e30;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .book {
+            display: inline-block;
+            width: 210px;
+            background: white;
+            padding: 15px;
+            margin: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+        button {
+            background: #243b55;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Book Catalogue</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="bookdetails.html">Book Details</a>
+    <a href="registration_login.html">Login/Register</a>
+    <a href="cart_contact.html">Cart & Contact</a>
+</nav>
+
+<div class="container">
+    <h2>Available Books</h2>
+    <p id="message"></p>
+
+    <div class="book">
+        <h3>Java Programming</h3>
+        <p>Author: Herbert Schildt</p>
+        <p>Price: ₹450</p>
+        <button onclick="addBook('Java Programming')">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="book">
+        <h3>Web Development</h3>
+        <p>Author: Jon Duckett</p>
+        <p>Price: ₹550</p>
+        <button onclick="addBook('Web Development')">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="book">
+        <h3>Wings of Fire</h3>
+        <p>Author: A. P. J. Abdul Kalam</p>
+        <p>Price: ₹300</p>
+        <button onclick="addBook('Wings of Fire')">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="book">
+        <h3>Rich Dad Poor Dad</h3>
+        <p>Author: Robert Kiyosaki</p>
+        <p>Price: ₹350</p>
+        <button onclick="addBook('Rich Dad Poor Dad')">
+            Add to Cart
+        </button>
+    </div>
+</div>
+
+<script>
+    function addBook(bookName) {
+        document.getElementById("message").innerHTML =
+            bookName + " added to cart!";
+    }
+</script>
+
+</body>
+</html>

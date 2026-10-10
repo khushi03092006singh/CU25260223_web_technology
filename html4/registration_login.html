@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration and Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+        }
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background: #141e30;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 25px;
+        }
+        .form-box {
+            background: white;
+            padding: 25px;
+            width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+        }
+        button {
+            background: #243b55;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        #message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Customer Account</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="bookdetails.html">Book Details</a>
+    <a href="registration_login.html">Login/Register</a>
+    <a href="cart_contact.html">Cart & Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="form-box">
+        <h2>Registration</h2>
+
+        <form onsubmit="registerUser(event)">
+            <label>Full Name</label>
+            <input type="text" id="name" required>
+
+            <label>Email</label>
+            <input type="email" id="regEmail" required>
+
+            <label>Password</label>
+            <input type="password" id="regPassword"
+                   minlength="6" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div class="form-box">
+        <h2>Login</h2>
+
+        <form onsubmit="loginUser(event)">
+            <label>Email</label>
+            <input type="email" id="loginEmail" required>
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</div>
+
+<p id="message"></p>
+
+<script>
+    function registerUser(event) {
+        event.preventDefault();
+
+        document.getElementById("message").innerHTML =
+            "Registration form submitted successfully!";
+
+        event.target.reset();
+    }
+
+    function loginUser(event) {
+        event.preventDefault();
+
+        document.getElementById("message").innerHTML =
+            "Login form submitted successfully!";
+
+        event.target.reset();
+    }
+</script>
+
+</body>
+</html>
