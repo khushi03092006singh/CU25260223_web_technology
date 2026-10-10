@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+</head>
+<body>
+
+    <h1>Multiplication Table</h1>
+
+    Enter a Number:
+    <input type="number" id="num">
+
+    <button onclick="showTable()">Show Table</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showTable() {
+            let n = Number(document.getElementById("num").value);
+            let table = "";
+
+            if (document.getElementById("num").value === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter a number.";
+                return;
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                table += n + " x " + i + " = " + (n * i) + "<br>";
+            }
+
+            document.getElementById("result").innerHTML = table;
+        }
+    </script>
+
+</body>
+</html>
