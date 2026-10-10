@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <h1 id="heading">Welcome to My Webpage</h1>
+
+    <p id="paragraph">
+        This is the original paragraph.
+    </p>
+
+    <button onclick="changeContent()">Click Me</button>
+
+    <script>
+        function changeContent() {
+
+            document.getElementById("heading").innerHTML =
+                "Welcome to BCA Lab";
+
+            document.getElementById("paragraph").innerHTML =
+                "The heading, paragraph, and background have changed.";
+
+            document.body.style.backgroundColor = "lightblue";
+        }
+    </script>
+
+</body>
+</html>

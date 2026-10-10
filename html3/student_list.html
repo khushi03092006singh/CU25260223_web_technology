@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+
+    <h1 id="heading">Student Information</h1>
+
+    <p class="info">List of BCA Students</p>
+
+    <ul id="studentList">
+        <li>Rahul</li>
+        <li>Priya</li>
+        <li>Aman</li>
+        <li>Neha</li>
+        <li>Rohit</li>
+    </ul>
+
+    <button onclick="showStudents()">Display Students</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showStudents() {
+
+            let heading = document.getElementById("heading");
+
+            let students = document.getElementsByTagName("li");
+
+            let info = document.querySelector(".info");
+
+            heading.style.color = "blue";
+            info.style.color = "green";
+
+            let output = "Total Students: " + students.length + "<br>";
+
+            for (let i = 0; i < students.length; i++) {
+                output += students[i].innerHTML + "<br>";
+            }
+
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>

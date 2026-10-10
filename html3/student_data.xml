@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <id>101</id>
+        <name>Rahul</name>
+        <course>BCA</course>
+        <marks>85</marks>
+    </student>
+
+    <student>
+        <id>102</id>
+        <name>Priya</name>
+        <course>BCA</course>
+        <marks>90</marks>
+    </student>
+
+    <student>
+        <id>103</id>
+        <name>Aman</name>
+        <course>BCA</course>
+        <marks>78</marks>
+    </student>
+
+    <student>
+        <id>104</id>
+        <name>Neha</name>
+        <course>BCA</course>
+        <marks>88</marks>
+    </student>
+
+    <student>
+        <id>105</id>
+        <name>Rohit</name>
+        <course>BCA</course>
+        <marks>76</marks>
+    </student>
+</students>

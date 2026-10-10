@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <bookID>B101</bookID>
+        <title>Java Programming</title>
+        <author>Herbert Schildt</author>
+        <publisher>McGraw Hill</publisher>
+        <price>550</price>
+        <category>Programming</category>
+    </book>
+
+    <book>
+        <bookID>B102</bookID>
+        <title>Python Basics</title>
+        <author>Eric Matthes</author>
+        <publisher>No Starch Press</publisher>
+        <price>600</price>
+        <category>Programming</category>
+    </book>
+
+    <book>
+        <bookID>B103</bookID>
+        <title>Database Systems</title>
+        <author>Raghu Ramakrishnan</author>
+        <publisher>McGraw Hill</publisher>
+        <price>700</price>
+        <category>Database</category>
+    </book>
+
+    <book>
+        <bookID>B104</bookID>
+        <title>Web Development</title>
+        <author>Jon Duckett</author>
+        <publisher>Wiley</publisher>
+        <price>650</price>
+        <category>Web Technology</category>
+    </book>
+
+    <book>
+        <bookID>B105</bookID>
+        <title>Data Structures</title>
+        <author>Mark Allen Weiss</author>
+        <publisher>Pearson</publisher>
+        <price>500</price>
+        <category>Computer Science</category>
+    </book>
+</books>

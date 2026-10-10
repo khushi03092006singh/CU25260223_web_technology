@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Records from XML</title>
+</head>
+<body>
+
+    <h1>Student Records</h1>
+
+    <button onclick="loadStudents()">Load Students</button>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentData"></tbody>
+    </table>
+
+    <p id="message"></p>
+
+    <script>
+        function loadStudents() {
+            fetch("student_data.xml")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("XML file not found.");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    let parser = new DOMParser();
+                    let xml = parser.parseFromString(
+                        data, "text/xml"
+                    );
+
+                    if (xml.querySelector("parsererror")) {
+                        throw new Error("Invalid XML file.");
+                    }
+
+                    let students =
+                        xml.getElementsByTagName("student");
+
+                    let output = "";
+
+                    for (let i = 0; i < students.length; i++) {
+                        let id = students[i]
+                            .getElementsByTagName("id")[0]
+                            .textContent;
+
+                        let name = students[i]
+                            .getElementsByTagName("name")[0]
+                            .textContent;
+
+                        let course = students[i]
+                            .getElementsByTagName("course")[0]
+                            .textContent;
+
+                        let marks = students[i]
+                            .getElementsByTagName("marks")[0]
+                            .textContent;
+
+                        output += "<tr>" +
+                            "<td>" + id + "</td>" +
+                            "<td>" + name + "</td>" +
+                            "<td>" + course + "</td>" +
+                            "<td>" + marks + "</td>" +
+                            "</tr>";
+                    }
+
+                    document.getElementById("studentData")
+                        .innerHTML = output;
+
+                    document.getElementById("message")
+                        .textContent = "Records loaded successfully.";
+                })
+                .catch(error => {
+                    document.getElementById("message")
+                        .textContent = error.message;
+                });
+        }
+    </script>
+
+</body>
+</html>
